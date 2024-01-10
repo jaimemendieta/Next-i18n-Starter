@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* font size */
+  --font-xxxs: 0.334em; /*5.35pt*/
+  --font-xxs: 0.541em; /*8.65pt*/
+  --font-xs: 0.875em; /*14pt*/
+  --font-mobile-sm: 1.2em;
+  --font-sm: 1.416em; /*22.66pt*/
+  --font-med: 2.291em; /*36.66pt*/
+  --font-lg: 3.708em; /*59.32pt*/
+  --font-xl: 6em; /*95.98pt*/
+  --font-xxl: 9.706em; /*155.29pt*/
+  --font-xxxl: 15.704em; /*251.26pt*/
+
+  /* colors */
+  --main-foreground: #474747;
+  --main-color: #786860;
+  --main-color-dark: #483e3c;
+  --secondary-color: #bfa17e;
+  --hover-color: #e3cfbb;
+  --hover-secondary-color: #808080;
+  --main-background: #FBFAF5;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+h1 {
+  font-size: var(--font-med);
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--main-color);
+  margin-bottom: 8px;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: var(--font-lg);
+  }
+}
+
+@media (min-width: 1600px) {
+  h1 {
+    font-size: var(--font-xl);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--main-color);
+    margin-bottom: 8px;
+  }
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  font-size: 0.875em;
+  font-weight: 500;
+  color: var(--main-foreground);
+  transition: 0.3s ease-in-out;
+}
+
+.navigation-language-header {
+  display: flex;
+  margin-right: 42px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.language-header {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-hero {
+  display: flex;
+  height: 55vh;
+  width: 100%;
+  /*background-image: url("../../../public/background.jpg");*/
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  overflow: hidden;
+}
+
+.minimal-button {
+  position: relative;
+  font-size: var(--font-mobile-sm);
+  font-weight: 500;
+  color: var(--main-foreground);
+  border-radius: 50px;
+  padding: 13px 26px;
+  margin-bottom: 44px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid var(--main-foreground);
+  transition: background-color .3s;
+}
+
+.minimal-button:hover {
+  background-color: var(--main-foreground);
+  color: var(--main-background);
+}
+
+.cm {
+  display: block;
+  position: fixed;
+  background-color: rgba(251, 250, 245, 70%);
+  color: var(--main-foreground);
+  text-shadow: none;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 .625em 1.875em #000;
+  max-width: 100%;
+  padding: 1em 1.4em 1.3em;
+  border-radius: .45em .45em 0 0;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.c-inr {
+  font-size: .8em;
+}
+
+.c-bns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.4em;
+}
+
+.c-bn {
+  margin-bottom: 0;
+  user-select: none;
+  flex: 1;
+
+}
+
+.c-bn:hover {
+  background-color: var(--main-background);
+  border-color: var(--main-foreground);
+  color: var(--main-foreground);
+}
+
+.c-accept {
+  background-color: #eacd92;
+  border-color: #eacd92;
+  padding: .8em .5em;
+  font-size: .8em;
+}
+
+.c-reject {
+  margin-left: .5em;
+  color: var(--main-background);
+  background-color: var(--main-foreground);
+  padding: .8em .5em;
+  font-size: .8em;
+}
+
+.c-ttl {
+  font-weight: 500;
+}
+
+.c-txt {
+  padding-top: 1em;
+}
+
+@media (min-width: 360px) {
+  .c-inr {
+    font-size: .9em;
+  }
+}
+
+@media (min-width: 600px) {
+  .cm {
+    bottom: 1.25em;
+    right: 1.25em;
+    box-shadow: 0 .125em 0.875em #000;
+    max-width: 25em;
+    padding: 1em 1.4em 1.3em;
+    border-radius: .45em;
+  }
+
+  .c-inr {
+    font-size: 1em;
+  }
+
+  .c-accept {
+    font-size: 1em;
+  }
+
+  .c-reject {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cm {
+    box-shadow: 0 .625em 1.875em #000;
+    background-color: rgba(251, 250, 245, 90%);
+  }
+}
+
+@media (min-width: 1920px) {
+  .cm {
+
+  }
+
+  .c-inr {
+
+  }
+
+  .c-accept {
+    font-size: .85em;
+  }
+
+  .c-reject {
+    font-size: .85em;
+  }
+}
